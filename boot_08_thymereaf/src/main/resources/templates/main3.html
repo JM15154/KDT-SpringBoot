@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>main3.html</h2>
+태그 없이 강제적으로 값 출력 : [[${login}]]
+
+<div>
+	아이디1:<span th:text="${login.userid}"></span>
+	비번1:<span th:text="${login.passwd}"></span>
+</div>
+
+<div th:object="${login}">
+	아이디2:<span th:text="*{userid}"></span>
+	비번2:<span th:text="*{passwd}"></span>
+</div>
+
+<th:block th:object="${login}">
+	아이디3:<span th:text="*{userid}"></span>
+	비번3:<span th:text="*{passwd}"></span>
+</th:block>
+
+<h3>변수</h3>
+JSTL의 c:set 역할 <br>
+<th:block th:with="id= ${login.userid}, pw= ${login.passwd}">
+	아이디4:<span th:text="${id}"></span>
+	비번4:<span th:text="${pw}"></span>
+</th:block>
+</body>
+</html>

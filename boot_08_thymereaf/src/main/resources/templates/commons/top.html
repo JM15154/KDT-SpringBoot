@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/test.css}">
+<script th:src="@{js/test.js}"></script>
+</head>
+<body>
+<h2>top.html</h2>
+
+<!-- 조각1 -->
+<div th:fragment="menu-fragment">
+
+	<ul>
+	<li>top</li>
+	<li>dress</li>
+	</ul>
+
+</div>
+
+<!-- 조각2 -->
+<div th:fragment="top-fragment">
+	<ul>
+	<li>login</li>
+	<li>logout</li>
+	</ul>
+</div>
+</body>
+</html>

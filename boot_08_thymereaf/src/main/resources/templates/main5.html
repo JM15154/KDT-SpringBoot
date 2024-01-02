@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/test.css}">
+<script th:src="@{js/test.js}"></script>
+</head>
+<body>
+<h2>main5.html</h2>
+<h3>경로지정</h3>
+<a href="http://www.daum.net">daum</a><br>
+<a th:href="@{http://www.daum.net}">daum</a>
+<p th:text="hello"></p>
+<img th:src="@{images/test.png}">
+
+
+<h3>경로지정 2</h3>
+<a th:href="@{main5_1}">main5_1(상대경로)</a>
+http://localhost:8090/app/main5
+<a th:href="@{/main5_2(id='aaa',pw='1234' )}">main5_2(절대경로)</a>
+
+<form th:action="@{main5_3}" th:method="get">
+아이디:<input type="text" name="userid">
+비번:<input type="text" name="passwd">
+<input type="submit" value="로그인">
+
+</form>
+</body>
+</html>
